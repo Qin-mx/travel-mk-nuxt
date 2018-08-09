@@ -24,6 +24,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+    publicPath: 'https://qin-mx.github.io/travel-mk-nuxt/dist',
     postcss: [
       require('postcss-nested')(),
       require('postcss-responsive-type')(),

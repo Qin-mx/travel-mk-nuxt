@@ -82,3 +82,5 @@ this.scroll = new BScroll(this.$refs.wrapper,{ mouseWheel: true, click: true, ta
 > deactivated需要替换成destroyed生命周期来销毁全局事件
 
 3.每次返回首页都刷新页面 - 能力不足不知道怎么改，暂时放置
+
+
