@@ -83,4 +83,16 @@ this.scroll = new BScroll(this.$refs.wrapper,{ mouseWheel: true, click: true, ta
 
 3.每次返回首页都刷新页面 - 能力不足不知道怎么改，暂时放置
 
-
+4.打包以后路径不匹配的两种解决方式
+```
+<!-- 第一种 在nuxt.config.js的build-->
+if(!isDev){
+    config.output.publicPath = './_nuxt/';
+}
+<!-- 第二种 在nuxt.config.js的build -->
+build: {
+    // 这里是你要访问的实际地址
+    publicPath: 'xxxx',
+},
+```
+综合来说第二种更好，第一种有bug。比如你有多级路由parent/child和parent两个路由，这样会导致你一个页面访问parent/child/_nuxt/main.js和parent/_nuxt/main.js，明显冲突了（[参考地址](https://segmentfault.com/q/1010000015267907)）
