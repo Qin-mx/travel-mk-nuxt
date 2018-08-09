@@ -67,7 +67,7 @@ module.exports = {
     '~static/iconfont/iconfont.css',
     'swiper/dist/css/swiper.css'
   ],
-  vendor: ['vuex','axios'],
+  vendor: ['vuex','axios','~/plugins/vue-awesome-swiper.js'],
   plugins: [
     { src: '~/plugins/vue-awesome-swiper.js', ssr: false },
   ],

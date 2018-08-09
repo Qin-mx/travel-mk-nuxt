@@ -69,15 +69,16 @@ export default {
       ]
     }
   },
-  activated () {
-    window.addEventListener('scroll', this.handleScroll)
+  mounted () {
+     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
-    window.removeEventListener('scroll', this.handleScroll)
+  destroyed() {
+     window.removeEventListener('scroll', this.handleScroll)
     this.isbgColor = true
   },
   methods: {
     handleScroll () {
+      console.log(111)
       const top = document.documentElement.scrollTop || document.body.scrollTop
       // console.log(top)
       if (top > 5) {

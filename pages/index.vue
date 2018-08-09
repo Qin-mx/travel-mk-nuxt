@@ -55,24 +55,19 @@ export default {
       newCity: '',
     }
   },
-  activated () {
-    if (this.lastCity !== this.newCity) {
-      this.lastCity = this.newCity
-      this.getList()
-    }
-  },
   computed: {
     ...mapGetters([
       'city'
     ])
   },
   mounted () {
-    // 保存
+   // 保存
     if(localStorage.city){
       this.newCity = localStorage.city
     }else{
       this.newCity = this.city
     }
+
     this.lastCity = this.newCity
     this.getList()
   },

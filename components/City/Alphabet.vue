@@ -5,7 +5,7 @@
             v-for="item in letters"
             :key="item"
             @click="clickalphabet(item)"
-            @touchstart.prevent="handleTouchStart"
+            @touchstart.prevent="handleTouchStart(item)"
             @touchmove.prevent="handleTouchMove"
             @touchEnd.prevent="handleTouchEnd"
             :ref='item'
@@ -45,8 +45,9 @@ export default {
     clickalphabet (key) {
       this.$emit('handleCityListStatus', key)
     },
-    handleTouchStart () {
+    handleTouchStart (item) {
       this.touchStatus = true
+      this.clickalphabet(item)
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
